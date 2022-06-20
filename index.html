@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container card font">
+      <div class="row card-body">
+        <div class="row"> 
+          <div class="col-sm-3">
+            <a href=""
+              ><img src="images/groza.png" class="img-thumbnail" alt="logo"
+            /></a>
+          </div>
+          <div class="col-sm-8">
+          <form id="input-form" class="input-group">
+         
+            <div class="input-group">
+              
+                <input
+                  type="text"
+                  id="text"
+                  class="form-control"
+                  placeholder="Enter a city"
+                />
+                <button class="btn btn-primary">Search</button>
+              </form>
+              <button type="button" class="btn btn-success" id = "currently">Currently</button>
+            </div>
+          </div>
+        </div> </div>
+          <h1 id = "h1">Malmo</h1>
+          <span id = "description">Clear</span>
+         <div class="card-group gx-5 shadow">
+          <div class="card bg-light gx-4 tabl" id = "tabl">
+            <div class="card-body">
+              <h5 class="card-title">Wednesday</h5>
+              <img src="images/sunny.png" class="card-img-top" alt="sunny" />
+              <span class="card-text"> +17° +12° </span>
+            </div>
+          </div>
+          <div class="card bg-light gx-4 tabl" id = "tabl">
+            <div class="card-body cardWeither">
+              <h5 class="card-title">Thursday</h5>
+              <img
+                src="images/cloudy.png"
+                class="card-img-top"
+                alt="thunderstormunn"
+              />
+              <span class="card-text"> +14° +12° </span>
+            </div>
+          </div>
+          <div class="card bg-light gx-4 tabl" id = "tabl"
+          >
+            <div class="card-body">
+              <h5 class="card-title">Friday</h5>
+              <img src="images/sunny.png" class="card-img-top" alt="sunny" />
+              <span class="card-text"> +22° +19° </span>
+            </div>
+          </div>
+          <div class="card bg-light gx-4 tabl" id = "tabl">
+            <div class="card-body">
+              <h5 class="card-title">Saturday</h5>
+              <img src="images/cloudy.png" class="card-img-top" alt="cloudy" />
+              <span class="card-text"> +17° +10° </span>
+            </div>
+          </div>
+          <div class="card bg-light gx-4 tabl" id = "tabl">
+            <div class="card-body">
+              <h5 class="card-title">Sunday</h5>
+              <img src="images/rainy.png" class="card-img-top" alt="rainy" />
+              <span class="card-text"> +17° +12° </span>
+            </div>
+          </div>
+          <div class="card bg-light gx-4 tabl" id = "tabl">
+            <div class="card-body">
+              <h5 class="card-title">Monday</h5>
+              <img
+                src="images/sunny.png"
+                class="card-img-top"
+                alt="cloudy - sunny"
+              />
+              <span class="card-text"> +23° +12° </span>
+            </div>
+          </div>
+          <div class="card bg-light gx-4 tabl" id = "tabl">
+            <div class="card-body">
+              <h5 class="card-title">Tuesday</h5>
+              <img src="images/sunny.png" class="card-img-top" alt="sunny" />
+              <span class="card-text"> +25° +19° </span>
+            </div>
+          </div>
+        </div>
+        <div class="row todayWeather">
+          <div class="col-sm-5 float-left">
+            <img
+              class="img-thumbnail figure-img"
+              src="images/sunny.png"
+              alt="cloudy-sunny"
+            />
+            <span class="todayTemp"
+              ><span id="todayTemp">+17</span>°C</a>
+              <!----<a id="Link-f" href="#">°F</a>-->
+            </span>
+          </div>
+          <div class="col-sm-4">
+               <span id = "humidity">Humidity: 32%</span> <br />
+              <span id = "wind"> Wind: 3 km/h</span> 
+          </div>
+          <div class="col-sm-3 float-end">
+            <span class="float-end"
+              > <span id = "cities">Malmo</span><br />
+              <div id="date" ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="src/app.js"></script>
+</html>
