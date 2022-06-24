@@ -6,26 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link href="src/styles.css" rel="stylesheet" type="text/css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class="container card font">
-      <div class="row card-body">
-        <div class="row"> 
+    <div class="container ard font">
+      
+        <div class="row">
+          <div class="col-sm-2">
+            <a href=""><img src="images/groza.png" class="img-thumbnail" alt="logo"
+            /></a>
+          </div>
+          <div class="col-sm-10">
+          <form id="input-form" class="input-group">
+          
+            
+              <input class = "form-control search-input"
+                  type="text"
+                  id="text"
+                  placeholder="Enter a city"
+                />
+                <button class="btn btn-primary">Search</button>
+                <button type="button" class="btn btn-success" id = "currently">Currently</button>
+            
+            
+           </form>
+           </div>
+        
+        
+        
+        
+        
+        <!--<div class="row"> 
           <div class="col-sm-3">
             <a href=""
               ><img src="images/groza.png" class="img-thumbnail" alt="logo"
             /></a>
           </div>
-          <div class="col-sm-8">
           <form id="input-form" class="input-group">
-         
+           <div class="col-sm-8">
             <div class="input-group">
               
                 <input
@@ -38,16 +62,21 @@
               </form>
               <button type="button" class="btn btn-success" id = "currently">Currently</button>
             </div>
-          </div>
-        </div> </div>
+            </div>
+       </div>
+            
+      --> 
+        
+        
           <h1 id = "h1">Malmo</h1>
           <span id = "description">Clear</span>
-         <div class="card-group gx-5 shadow">
-          <div class="card bg-light gx-4 tabl" id = "tabl">
+         <div class="card-group gx-5 shadow class="card-body>
+          <div class="card bg-light gx-4 tabl" id = "tabl"
+          >
             <div class="card-body">
               <h5 class="card-title">Wednesday</h5>
               <img src="images/sunny.png" class="card-img-top" alt="sunny" />
-              <span class="card-text"> +17° +12° </span>
+              <span class="card-text"> +22° +19° </span>
             </div>
           </div>
           <div class="card bg-light gx-4 tabl" id = "tabl">
@@ -124,7 +153,7 @@
               <div id="date" ></div>
           </div>
         </div>
-      </div>
+      
     </div>
   </body>
   <script src="src/app.js"></script>

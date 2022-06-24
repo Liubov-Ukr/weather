@@ -1,6 +1,10 @@
-.font {
-  font-family: Arial, Helvetica, sans-serif;
+body {
+  background-color: #007bff0a;
 }
+h5 {
+  font-size: 16px;
+}
+
 .todayWeather .figure-img {
   max-width: 40%;
 }
@@ -11,6 +15,16 @@
 
 .gx-5 {
   margin: 40px 4px;
+}
+.ard {
+  max-width: 1000px;
+  margin: 60px auto;
+  font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+  padding: 40px;
+  /*color: #878787;*/
 }
 .gx-4 {
   margin: 0 4px;
@@ -40,4 +54,13 @@
 #date {
   display: block;
   float: left;
+}
+.form-control {
+  background-color: #007bff0a;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+}
+.input-group {
+  margin: 25px auto;
 }
