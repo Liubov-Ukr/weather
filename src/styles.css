@@ -64,3 +64,7 @@ h5 {
 .input-group {
   margin: 25px auto;
 }
+#description {
+  font-size: 22px;
+  font-weight: 500;
+}
