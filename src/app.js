@@ -90,6 +90,12 @@ let dayWeek = days[now.getDay()];
 let time = now.getHours();
 let minutes = now.getMinutes();
 today.innerHTML = `${dayWeek} ${time}:${minutes}`;
+if (time < 10) {
+  today.innerHTML = `${dayWeek} 0${time}:${minutes}`;
+}
+if (minutes < 10) {
+  today.innerHTML = `${dayWeek} ${time}:0${minutes}`;
+}
 
 weatherCurrently();
 weatherMalmo();
