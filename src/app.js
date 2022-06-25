@@ -1,4 +1,3 @@
-let apiKey = `5b2b2fb0b29cccfcd7bfb15b10fda1fd`;
 function search(event) {
   event.preventDefault();
   let inputValue = document.querySelector("#text").value;
@@ -16,6 +15,10 @@ function weatherNow(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
   windy.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
+  todayTempIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 function weatherCurrently() {
   navigator.geolocation.getCurrentPosition(handlePosition);
@@ -35,6 +38,10 @@ function weatherCurrently() {
         response.data.weather[0].main;
       cities.innerHTML = `${response.data.name}`;
       windy.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
+      todayTempIcon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      );
     });
   }
 }
@@ -53,10 +60,16 @@ function weatherNowMalmo(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
   windy.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
+  todayTempIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
+let apiKey = `5b2b2fb0b29cccfcd7bfb15b10fda1fd`;
 let windy = document.querySelector("#wind");
 let humidity = document.querySelector("#humidity");
 let todayTemp = document.querySelector("#todayTemp");
+let todayTempIcon = document.querySelector("#todayTempIcon");
 let cities = document.querySelector("#cities");
 let currently = document.querySelector("#currently");
 currently.addEventListener("click", weatherCurrently);
@@ -78,4 +91,5 @@ let time = now.getHours();
 let minutes = now.getMinutes();
 today.innerHTML = `${dayWeek} ${time}:${minutes}`;
 
+weatherCurrently();
 weatherMalmo();
