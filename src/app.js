@@ -65,6 +65,26 @@ function weatherNowMalmo(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
+function ForecastHTML() {
+  let weeklyForecast = document.querySelector("#weeklyForecast");
+  let forecastHTML = `<div class="row">`;
+  let dayn = ["Sat", "Mon", "Tue", "Wed", "Thu", "Fri", "Sun"];
+  dayn.forEach(function (days) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-sm">
+            <div  class="card-body card-title">
+              <div class="card-title" id = "days">${days}</div>
+              <img src="images/sunny.png" class="card-img-top" alt="sunny" />
+              <span id = "maxTemp"> +22°</span> <span id = "minTemp"> +19°</span>
+            </div>
+            
+        </div>`;
+  });
+
+  weeklyForecast.innerHTML = forecastHTML;
+}
+
 let apiKey = `5b2b2fb0b29cccfcd7bfb15b10fda1fd`;
 let windy = document.querySelector("#wind");
 let humidity = document.querySelector("#humidity");
@@ -99,3 +119,4 @@ if (minutes < 10) {
 
 weatherCurrently();
 weatherMalmo();
+ForecastHTML();
