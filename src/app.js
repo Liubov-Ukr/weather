@@ -19,6 +19,7 @@ function weatherNow(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 function weatherCurrently() {
   navigator.geolocation.getCurrentPosition(handlePosition);
@@ -42,6 +43,7 @@ function weatherCurrently() {
         "src",
         `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
       );
+      getForecast(response.data.coord);
     });
   }
 }
@@ -64,24 +66,42 @@ function weatherNowMalmo(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
 }
-function ForecastHTML() {
+function getForecast(coordinates) {
+  let WeatherApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=current&appid=${apiKey}&units=metric`;
+  axios.get(WeatherApi).then(ForecastHTML);
+}
+function dayes(dayweek) {
+  let date = new Date(dayweek * 1000);
+  let day = date.getDay();
+  let days = ["Sat", "Mon", "Tue", "Wed", "Thu", "Fri", "Sun"];
+  return days[day];
+}
+function ForecastHTML(response) {
   let weeklyForecast = document.querySelector("#weeklyForecast");
   let forecastHTML = `<div class="row">`;
-  let dayn = ["Sat", "Mon", "Tue", "Wed", "Thu", "Fri", "Sun"];
-  dayn.forEach(function (days) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-sm">
+  let days = response.data.daily;
+  days.forEach(function (day, index) {
+    if (index < 7) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-sm">
             <div  class="card-body card-title">
-              <div class="card-title" id = "days">${days}</div>
-              <img src="images/sunny.png" class="card-img-top" alt="sunny" />
-              <span id = "maxTemp"> +22°</span> <span id = "minTemp"> +19°</span>
+              <div class="card-title" id = "days">${dayes(day.dt)}</div>
+                <img src="http://openweathermap.org/img/wn/${
+                  day.weather[0].icon
+                }@2x.png" class="card-img-top" alt="sunny" />
+              <span id = "maxTemp"><b>${Math.round(
+                day.temp.max
+              )}</b>°</span> <span id = "minTemp">${Math.round(
+          day.temp.min
+        )}°</span>
             </div>
             
         </div>`;
+    }
   });
-
   weeklyForecast.innerHTML = forecastHTML;
 }
 
@@ -116,7 +136,4 @@ if (time < 10) {
 if (minutes < 10) {
   today.innerHTML = `${dayWeek} ${time}:0${minutes}`;
 }
-
-weatherCurrently();
 weatherMalmo();
-ForecastHTML();
