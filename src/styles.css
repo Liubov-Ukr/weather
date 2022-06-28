@@ -51,12 +51,7 @@ h1 {
   display: block;
   float: left;
 }
-.form-control {
-  background-color: #007bff0a;
-  border: none;
-  border-radius: 5px;
-  height: 50px;
-}
+
 .input-group {
   margin: 30px auto;
 }

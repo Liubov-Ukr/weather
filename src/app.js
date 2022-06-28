@@ -87,7 +87,7 @@ function ForecastHTML(response) {
       forecastHTML =
         forecastHTML +
         `<div class="col-sm">
-            <div  class="card-body card-title card bg-light">
+            <div  class="card-body card-title">
               <div class="card-title" id = "days">${dayes(day.dt)}</div>
                 <img src="http://openweathermap.org/img/wn/${
                   day.weather[0].icon
@@ -129,6 +129,7 @@ let days = [
 let dayWeek = days[now.getDay()];
 let time = now.getHours();
 let minutes = now.getMinutes();
+
 today.innerHTML = `${dayWeek} ${time}:${minutes}`;
 if (time < 10) {
   today.innerHTML = `${dayWeek} 0${time}:${minutes}`;
