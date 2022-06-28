@@ -87,14 +87,14 @@ function ForecastHTML(response) {
       forecastHTML =
         forecastHTML +
         `<div class="col-sm">
-            <div  class="card-body card-title">
+            <div  class="card-body card-title card bg-light">
               <div class="card-title" id = "days">${dayes(day.dt)}</div>
                 <img src="http://openweathermap.org/img/wn/${
                   day.weather[0].icon
                 }@2x.png" class="card-img-top" alt="sunny" />
-              <span id = "maxTemp"><b>${Math.round(
+              <span id = "maxTemp">${Math.round(
                 day.temp.max
-              )}</b>°</span> <span id = "minTemp">${Math.round(
+              )}°</span> <span id = "minTemp">${Math.round(
           day.temp.min
         )}°</span>
             </div>
