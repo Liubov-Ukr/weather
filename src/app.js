@@ -91,7 +91,7 @@ function ForecastHTML(response) {
               <div class="card-title" id = "days">${dayes(day.dt)}</div>
                 <img src="http://openweathermap.org/img/wn/${
                   day.weather[0].icon
-                }@2x.png" class="card-img-top" alt="sunny" />
+                }@2x.png" alt="sunny" width = "38"; height = "38" />
               <span id = "maxTemp">${Math.round(
                 day.temp.max
               )}°</span> <span id = "minTemp">${Math.round(
